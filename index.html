@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Borderlands Skill Tree Planner</title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<script src="js/jquery.js"></script> 
+		<script src="js/jquery-csv.js"></script> 
+		<script src="js/main.js"></script> 
+	</head>
+	<body>
+		<div id='si-parent'>
+			<div id='skill-info'>
+				<p id='skill-description'></p><br/>
+				<p class='skill-label' id='skill-current-label'></p><p id='skill-current-effect'></p><br/>
+				<p class='skill-label' id='skill-next-label'></p><p id='skill-next-effect'></p><br/>
+			</div>
+		</div>
+		<div id='skill-tree'>
+			<p>Class: </p><select id='class'></select><br/>
+			<table id='build-table'></table>
+		</div>
+		<div id='bi-parent'>
+			<div id='build-info'>
+				<p class='skill-points-title'>Skill points: </p><p id='skill-points-cur'></p><p class='skill-points-title'>/</p><p id='skill-points-max'></p>
+			</div>
+		</div>
+	</body>
+</html>

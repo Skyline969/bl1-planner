@@ -1,0 +1,89 @@
+Class,Tree,Tier,Name,Description,Improvement,Level 1,Level 2,Level 3,Level 4,Level 5,Base Cooldown,Base Duration
+Roland,Initial,0,Scorpio Turret,Gain the ability to deploy a Scorpio Turret that automatically fires at enemies. The Scorpio Turret also has shields that can be used as cover.,X,Unlocked,N/A,N/A,N/A,N/A,100,
+Roland,Infantry,1,Impact,Increases Bullet Damage with all weapon types.,+X% Bullet Damage,3,6,9,12,15,N/A,N/A
+Roland,Infantry,1,Sentry,Increases Scorpio Turret damage.,+X% Scorpio Turret Damage,7,14,21,28,35,N/A,N/A
+Roland,Support,1,Defense,Increases how quickly your shields recharge.,+X% Shield Recharge Speed,4,8,12,16,20,N/A,N/A
+Roland,Support,1,Stockpile,Players near the Scorpio Turret regenerate ammo for the weapon currently in their hands.,+X Ammo Regeneration Rate,1,2,3,4,5,N/A,N/A
+Roland,Medic,1,Fitness,Increases your Maximum Health.,+X% Maximum Health,5,10,15,20,25,N/A,N/A
+Roland,Medic,1,Aid Station,Allies near the Scorpio Turret regenerate health.,Regenerates +X% health per second,1,2,3,4,5,N/A,N/A
+Roland,Infantry,2,Scattershot,Increases shotgun damage and spread.,+X% Shotgun Damage/+X% Shotgun Spread,3/5,6/10,9/15,12/20,15/25,N/A,N/A
+Roland,Infantry,2,Metal Storm,Killing an enemy increases your Fire Rate and reduces Recoil for a few seconds.,+X% Weapon Fire Rate/+X% Recoil Reduction,6/15,12/30,18/45,24/60,30/75,N/A,N/A
+Roland,Support,2,Quick Charge,Killing an enemy causes your shields to quickly regenerate for a few seconds.,+X% Shields per second,2,3,4,6,7,N/A,N/A
+Roland,Support,2,Barrage,Increases the number of shots your Scorpio Turret fires in each burst.,+X Shots fired per burst,1,2,3,4,5,N/A,N/A
+Roland,Medic,2,Overload,Increases magazine capacity with all weapon types.,+X% Magazine size,12,24,36,48,60,N/A,N/A
+Roland,Medic,2,Cauterize,Shooting team members heals them. This effect also works with grenades and rockets.,Converts +X% damage to health,6,12,18,24,30,N/A,N/A
+Roland,Infantry,3,Refire,Shooting an enemy reduces the Cooldown of your Scorpio Turret. This effect can only occur every 2 seconds.,Cooldown reduction per hit: X (in seconds),1,2,3,4,5,N/A,N/A
+Roland,Infantry,3,Assault,Increases Magazine Size and reduces Recoil with Combat Rifles.,+X% Magazine Size and Recoil Reduction,9,18,27,36,45,N/A,N/A
+Roland,Support,3,Grenadier,Killing an enemy increases your grenade damage and causes you to regenerate grenades for a few seconds.,+X Grenades per minute/+X% Grenade Damage,2/3,3/6,5/9,6/12,8/15,N/A,N/A
+Roland,Support,3,Deploy,Reduces the cooldown for your Scorpio Turret.,Cooldown reduction +X%,20,40,60,80,100,N/A,N/A
+Roland,Medic,3,Revive,The Scorpio Turret has a chance to instantly revive nearby crippled friends when deployed.,+X% Revival Chance,14,28,42,56,70,N/A,N/A
+Roland,Medic,3,Grit,Increases your resistance to Bullet Damage.,+X% Bullet Resistance,3,6,9,12,15,N/A,N/A
+Roland,Infantry,4,Guided Missile,Your Scorpio Turret launches guided missiles in addition to using its regular gun.,Fire a missile every X seconds,8,7,6,5,4,N/A,N/A
+Roland,Support,4,Supply Drop,The Scorpio Turret periodically fires out supply pickups to resupply players.,Supply drop every X seconds,7,6,5,4,3,N/A,N/A
+Roland,Medic,4,Stat,Killing an enemy increases health regeneration for you and nearby friends for a few seconds.,Regenerates +X% health per second,1,2,3,4,5,N/A,N/A
+Mordecai,Initial,0,Bloodwing,Gain the ability to send your pet Bloodwing out to attack an enemy and then return.,X,Unlocked,N/A,N/A,N/A,N/A,28,N/A
+Mordecai,Sniper,1,Focus,Increases accuracy with all weapon types.,+X% Accuracy/-X% Sniper Rifle Sway,5/10,10/20,15/30,20/40,25/50,N/A,N/A
+Mordecai,Sniper,1,Caliber,Increases damage with Sniper Rifles.,+X% Sniper Rifle damage,4,8,12,16,20,N/A,N/A
+Mordecai,Rogue,1,Swift Strike,Increases Bloodwing Damage and movement speed.,+X% Bloodwing Damage/+X% Bloodwing Speed,20/8,40/16,60/24,80/32,100/40,N/A,N/A
+Mordecai,Rogue,1,Swipe,"The Bloodwing causes enemies to drop additional money, ammo, and healing items when it attacks.",Maximum number of additional items dropped: X,1,2,3,4,5,N/A,N/A
+Mordecai,Gunslinger,1,Deadly,Increases Critical Hit damage.,+X% Critical Hit Damage,6,12,18,24,30,N/A,N/A
+Mordecai,Gunslinger,1,Gun Crazy,"When using pistols, you have a chance to fire two shots with each pull of the trigger instead of just one.",+X% Chance to fire 2 shots,8,16,24,32,40,N/A,N/A
+Mordecai,Sniper,2,Smirk,All players on your team (including you) gain additional experience when you kill an enemy with a Critical Hit.,+X% Experience Bonus,3,6,9,12,15,N/A,N/A
+Mordecai,Sniper,2,Killer,Killing an enemy increases your Damage and Reload Speed with all guns for a few seconds.,+X Damage/+X% Reload Speed,8/6,16/12,24/18,32/24,40/30,N/A,N/A
+Mordecai,Rogue,2,Fast Hands,Increases Reload Speed with all weapon types.,+X% Reload Speed,8,16,24,32,40,N/A,N/A
+Mordecai,Rogue,2,Out For Blood,"When your Bloodwing strikes an enemy, you gain health based on the amount of damage done.",+X% Damage converted to Health,7,14,21,28,35,N/A,N/A
+Mordecai,Gunslinger,2,Lethal Strike,"Increases melee damage. Also, every melee attack has a 35% chance to be a Lethal Strike and deal extremely high damage.",+X% Melee Damage/Lethal Strikes deal +X% damage,10/100,20/200,30/300,40/400,50/500,N/A,N/A
+Mordecai,Gunslinger,2,Riotous Remedy,Killing an enemy gives you chaotic health regeneration for a few seconds.,Healed up to X% of your maximum Health over 7 seconds,3,6,9,12,15,N/A,N/A
+Mordecai,Sniper,3,Loaded,Increases Magazine Capacity with Sniper Rifles.,+X% Magazine Capacity,14,28,42,56,70,N/A,N/A
+Mordecai,Sniper,3,Carrion Call,Shooting an enemy with a Sniper Rifle reduces the cooldown of your Bloodwing.,X Cooldown Reduction per hit,0.8,1.6,2.4,3.2,4,N/A,N/A
+Mordecai,Rogue,3,Aerial Impact,"Attacks from your Bloodwing can Daze enemies, reducing their movement speed and accuracy.",X% Chance to Daze (vs an equal level enemy),20,40,60,80,100,N/A,N/A
+Mordecai,Rogue,3,Ransack,Killing an enemy increases the amount of loot you get from other enemies killed for a few seconds.,X% Chance to drop an additional item,20,40,60,80,100,N/A,N/A
+Mordecai,Gunslinger,3,Predator,Decreases the cooldown of your pet Bloodwing.,Bloodwing Cooldown reduced by X seconds,3,6,9,12,15,N/A,N/A
+Mordecai,Gunslinger,3,Hair Trigger,Increases Fire Rate and Magazine Size with pistols.,+X% Fire Rate/+X% Magazine Size,4/6,8/12,12/18,16/24,20/30,N/A,N/A
+Mordecai,Sniper,4,Trespass,"Your bullets have a chance to ignore enemy shields. Also, slightly increases Bullet Damage.",X% chance to penetrate shields/+X% Bullet Damage,20/1,40/2,60/3,80/4,100/5,N/A,N/A
+Mordecai,Rogue,4,Bird of Prey,Increases the number of targets the Bloodwing can attack before returning.,Bloodwing attacks up to X targets,2,3,4,5,6,N/A,N/A
+Mordecai,Gunslinger,4,Relentless,Killing an enemy increases your fire rate and gives every bullet fired a 25% chance to be a Killer Shot and deal additional damage. This effect lasts a few seconds..,+X% Fire Rate/+X% Killer Shot damage,8/20,16/40,24/60,32/80,40/100,N/A,N/A
+Lilith,Initial,0,Phasewalk,"Gain the ability to turn invisible and move incredibly fast. Upon entering and leaving Phasewalk, you create a Phase Blast that damages nearby enemies. You can Melee attack to end Phasewalk early.",X,Unlocked,N/A,N/A,N/A,N/A,36,
+Lilith,Controller,1,Diva,Increases the capacity of your shield.,+X% Shield capacity,5,10,15,20,25,N/A,N/A
+Lilith,Controller,1,Striking,"Your melee attacks can Daze enemies, reducing their movement speed and accuracy.",+X% Chance to Daze (vs an equal level enemy),20,40,60,80,100,N/A,N/A
+Lilith,Elemental,1,Quicksilver,Increases your Fire Rate with all weapons.,+X% Fire Rate,5,10,15,20,25,N/A,N/A
+Lilith,Elemental,1,Spark,Causing Elemental Effects with Elemental Weapons.,+X% Elemental Chance,4,8,12,16,20,N/A,N/A
+Lilith,Assassin,1,Slayer,Increases your Critical Hit Damage.,+X% Critical Hit Damage,5,10,15,20,25,N/A,N/A
+Lilith,Assassin,1,Silent Resolve,Increases your resistance to damage for a few seconds after Phasewalking.,+X% Damage Reduction,14,28,42,56,70,N/A,N/A
+Lilith,Controller,2,Inner Glow,You regenerate Health while Phasewalking.,Regenerate +X% of your Health per second while Phasewalking,1,3,4,6,7,N/A,N/A
+Lilith,Controller,2,Dramatic Entrance,"Your Phase Blast can Daze enemies, reducing their movement speed and accuracy.",+X% Chance to Daze (vs an equal level enemy),20,40,60,80,100,N/A,N/A
+Lilith,Elemental,2,Resilience,"Increases your resistance to Fire, Shock, Corrosive, and Explosive Damage.",+X% Elemental Resistance,6,12,18,24,30,N/A,N/A
+Lilith,Elemental,2,Radiance,You deal Shock Damage to nearby enemies while Phasewalking. Damage is based on your Level and the Skill's Level.,+X Shock Damage,1,2,3,4,5,N/A,N/A
+Lilith,Assassin,2,Enforcer,Killing an enemy increases your accuracy and Bullet Damage for a few seconds.,+X% Accuracy/+X% Bullet Damage,7/2,14/4,21/6,28/8,35/10,N/A,N/A
+Lilith,Assassin,2,Hit & Run,Gain increased melee damage and Phasewalk duration.,+X% Melee damage/+X Phasewalk duration (in seconds),7/0.8,14/1.6,21/2.4,28/3.2,35/4,N/A,N/A
+Lilith,Controller,3,Hard to Get,Decreases the Cooldown time of Phasewalk.,Phasewalk Cooldown reduced by X seconds,3,6,10,13,16,N/A,N/A
+Lilith,Controller,3,Girl Power,Killing an enemy causes your Shield to quickly regenerate for a few seconds.,Regenerates X% of your Shield per second,2,3,4,6,7,N/A,N/A
+Lilith,Elemental,3,Venom,"Add Corrosive Damage to your melee attacks. Also, your melee atacks have a chance to Corrode enemies, causing additional damage over time.",+X% Melee Damage,5,10,15,20,25,N/A,N/A
+Lilith,Elemental,3,Intuition,Killing an enemy increases your movement speed and the experience you and your team earn for a few seconds.,+X% Movement Speed/+X% Team Experience,10/4,20/8,30/12,40/16,50/20,N/A,N/A
+Lilith,Assassin,3,High Velocity,Increases Bullet Damage and Velocity.,+X% Bullet Velocity/+X% Bullet Damage,20/4,40/8,60/12,80/16,100/20,N/A,N/A
+Lilith,Assassin,3,Blackout,Killing an enemy reduces the cooldown time of Phasewalk.,X seconds of cooldown reduction per kill,1.2,2.4,3.6,4.8,6,N/A,N/A
+Lilith,Controller,4,Mind Games,"Each bullet has a chance to Daze enemies, reducing their movement speed and accuracy.",+X% Chance to Daze (vs an equal level enemy),5,10,15,20,25,N/A,N/A
+Lilith,Elemental,4,Phoenix,Killing an enemy causes you to deal Fire Damage to nearby enemies and makes your shots not always cost ammo for a few seconds. Fire Damage increases with your Level.,+X% Chance to save ammo/+X Fire Damage,5/1,10/2,15/3,20/4,25/5,N/A,N/A
+Lilith,Assassin,4,Phase Strike,Using a melee attack while Phasewalking deals additional damage.,+X% Melee Damage while Phasewalking,160,320,480,640,800,N/A,N/A
+Brick,Initial,0,Berserk,"Gain the ability to go Berserk. While in this state, use the Aim and Fire Buttons to throw punches. Also, you gain resistance to all damage and you regenerate health while Berserking.",X,Unlocked,N/A,N/A,N/A,N/A,60,
+Brick,Brawler,1,Iron Fist,Increases the melee damage you deal.,+X% Melee Damage,6,12,18,24,30,N/A,N/A
+Brick,Brawler,1,Endless Rage,Increases the duration of Berserk.,+X% Berserk Duration,10,20,30,40,50,N/A,N/A
+Brick,Tank,1,Hardened,Increases your maximum health.,+X% Maximum Health,12,24,36,48,60,N/A,N/A
+Brick,Tank,1,Safeguard,Increases the strength of your shield.,+X% Shield Strength,8,16,24,32,40,N/A,N/A
+Brick,Blaster,1,Endowed,Increases the Explosive Damage you deal.,+X% Explosive Damage,3,6,9,12,15,N/A,N/A
+Brick,Blaster,1,Rapid Reload,Increases your Reload Speed and reduces Recoil with all weapons.,+X% Reload Speed/+X% Recoil Reduction,4/6,8/12,12/18,16/24,20/30,N/A,N/A
+Brick,Brawler,2,Sting Like a Bee,Punching while Berserk causes you to dash forward and slug your enemies.,Dash Distance: X feet,4,8,12,16,20,N/A,N/A
+Brick,Brawler,2,Heavy Handed,Killing an enemy greatly increases your melee damage for a few seconds.,+X% Melee Damage,12,24,36,48,60,N/A,N/A
+Brick,Tank,2,Bash,"Gives your melee attacks a chance to Daze enemies, slowing them and reducing their accuracy.",X% Chance to Daze,10,20,30,40,50,N/A,N/A
+Brick,Tank,2,Juggernaut,Killing an enemy creates resistance to all damage for a few seconds.,+X% Damage Resistance,10,20,30,40,50,N/A,N/A
+Brick,Blaster,2,Revenge,Killing an enemy increases your damage with all weapons for a few seconds.,+X% Damage,10,20,30,40,50,N/A,N/A
+Brick,Blaster,2,Wide Load,Increases the number of Rockets your Rocket Launcher can hold in its magazine.,+X Launcher Magazine Size,1,2,3,4,5,N/A,N/A
+Brick,Brawler,3,Prize Fighter,"While Berserk is active, your melee attacks have a chance to spawn cash prizes.",X% chance to spawn a cash prize,6,12,18,24,30,N/A,N/A
+Brick,Brawler,3,Short Fuse,Decreases the Cooldown of Berserk.,Berserk Cooldown reduced by X seconds,6,12,18,24,30,N/A,N/A
+Brick,Tank,3,Pay Back,"After your shields become depleted, you gain a damage bonus for 10 seconds.",+X% Damage Bonus,8,16,24,32,40,N/A,N/A
+Brick,Tank,3,Diehard,"Increases the amount of health you regain when revived by a friend or by Second Wind. Also, increases the amount of time you have before you die while you are Crippled.",+X% Revived Health Bonus/+X% Time to be Revived,30/20,60/40,90/60,120/80,150/100,N/A,N/A
+Brick,Blaster,3,Liquidate,Dealing Explosive Damage to an enemy reduces the Cooldown time of Berserk.,Cooldown reduction per hit: X (in seconds),1,2,3,4,5,N/A,N/A
+Brick,Blaster,3,Cast Iron,Increases your resistance to Explosive Damage.,+X% Explosive Damage Resistance,8,16,24,32,40,N/A,N/A
+Brick,Brawler,4,Blood Sport,Killing an enemy while Berserk is active regenerates some of your health.,+X% Health Regenerated,2,4,6,8,10,N/A,N/A
+Brick,Tank,4,Unbreakable,"When your shield is depleted, you gain 5 seconds of powerful shield regeneration.",+X% Shield Strength renegerated per second,3,6,9,12,15,N/A,N/A
+Brick,Blaster,4,Master Blaster,Killing an enemy increases your Fire Rate with all weapons and causes you to regenerate rockets for a few seconds.,+X% Fire Rate/X Rockets regenerated per minute,12/2,24/4,36/6,48/8,60/10,N/A,N/A
