@@ -192,7 +192,7 @@ var improve_skill = function(skill) {
 	}
 }
 
-// Returns true if the tier before the skill has sufficient levels to allow this skill to levels up
+// Returns true if the tiers before the skill have sufficient levels to allow this skill to level up
 var check_prerequisites = function(skill) {
 	// Instantly allow the skill to be leveled up if it is the root skill
 	if (skill["Tree"] == "Initial")
@@ -210,13 +210,30 @@ var check_prerequisites = function(skill) {
 		}
 		// Otherwise, check all the previous tier's skills and make sure their total levels is at least 5
 		else
-		{		
-			var prev_tier_val = 0;
+		{
+			/*var prev_tier_val = 0;
 			$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][parseInt(skill["Tier"])-1], function(){
 				prev_tier_val += skill_levels[this["Name"]];
 			});
-			return prev_tier_val >= 5;
+			return prev_tier_val >= 5;*/
+			
+			var prev_tiers_val = calculate_prev_skill_levels_recursive(skill, parseInt(skill["Tier"]-1), 0);
+			return prev_tiers_val >= (5 * parseInt(skill["Tier"])) - 5;
 		}
+	}
+}
+
+// Recursively calculates all points assigned to this tree in the tiers before the specified skill
+var calculate_prev_skill_levels_recursive = function(skill, tier, points) {
+	if (tier == 0)
+		return points;
+	else
+	{
+		$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][tier], function(){
+			points += skill_levels[this["Name"]];
+		});
+		
+		return calculate_prev_skill_levels_recursive(skill, tier-1, points);
 	}
 }
 
@@ -261,22 +278,33 @@ var check_dependencies = function(skill) {
 	}
 	else
 	{
-		// Calculate the value of all skills at this tier
+		// Get the maximum tier leveled
+		var max_tier_leveled = get_max_leveled_tier_recursive(skill, 1, 0);
+		// Get the total skill points of all tiers before the maximum one leveled
+		var prev_tiers_val = calculate_prev_skill_levels_recursive(skill, max_tier_leveled-1, 0);
+		
+		// If there are only points in tier 1 skills, tier 1 skills can be safely de-leveled.
+		// Similarly, if the skill being de-leveled is on the maximum leveled tier, it is safe to de-level
+		if (max_tier_leveled == 1 || parseInt(skill["Tier"]) == max_tier_leveled)
+			return true;
+		else
+			return prev_tiers_val > (5 * (max_tier_leveled-1));
+	}
+}
+
+// Returns the highest tier in this particular skill tree that has points assigned to it
+var get_max_leveled_tier_recursive = function(skill, tier, leveled_tier) {
+	if (skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][tier] === undefined)
+		return leveled_tier;
+	else
+	{
 		var current_tier_val = 0;
-		$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][skill["Tier"]], function(){
+		$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][tier], function(){
 			current_tier_val += skill_levels[this["Name"]];
 		});
-		// Calculate the value of all skills above this tier
-		var next_tier_val = 0;
-		$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][parseInt(skill["Tier"])+1], function(){
-			next_tier_val += skill_levels[this["Name"]];
-		});
-		
-		// If the next tier has levels, let's use some logic here
-		if (next_tier_val > 0)
-			return current_tier_val > 5 && next_tier_val > 0;
-		else
-			return true;
+		if (current_tier_val > 0)
+			leveled_tier = tier;
+		return get_max_leveled_tier_recursive(skill, tier+1, leveled_tier);
 	}
 }
 

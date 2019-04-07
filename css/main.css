@@ -63,11 +63,11 @@ p {
 }
 
 .skill-improved {
-	background: #2ab500;
+	background: #fc6000;
 }
 
 .skill-maxed {
-	background: #fc6000;
+	background: #2ab500;
 }
 
 .skill:hover {
