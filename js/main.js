@@ -1,7 +1,6 @@
 var skills_hash = {};
 var selected_class = "";
 var skill_levels = {};
-var skill_points_min_level = 4;
 var skill_points_current = 0;
 var skill_points_max = 69;
 var shown_skill = "";
@@ -62,6 +61,11 @@ var build_class_selector = function() {
 		update_class($(this).find("option:selected").val());
 	});
 	
+	// Set the clear button to actually clear the tree when clicked
+	$("#clear").on("click", function(){
+		update_class(selected_class);
+	});
+	
 	update_class(selected_class);
 }
 
@@ -108,24 +112,24 @@ var build_tree = function() {
 		if (row == 0)
 		{
 			$.each(skill_trees, function(){
-				skill_row += "<td>" + this + "</td>";
+				skill_row += "<th>" + this + "</th>";
 			});
 		}
 		else
 		{
 			$.each(skill_trees, function(){
-				skill_row += "<td>";
+				skill_row += "<td class='tree_tier'>";
 				$.each(skills_hash[selected_class]["Tree"][this]["Tier"][row], function(){
 					skill_row += "<div class='skill' name='" + this["Name"] + "'>" + this["Name"] + "<br/><p class='level'></p></div>";
 				});
-				skill_row += "</td>";
+				skill_row += "</td class='tree_tier'>";
 			});
 		}
 		skill_row += "</tr>";
 		$("#build-table").append(skill_row);
 	}
 	
-	// Now that the tree is built, add the on-hover event for the skills to show their info and clear it accordingly
+	// Now that the tree is built, add the on-hover/click events for the skills to show their info and clear it accordingly
 	$(".skill").on("mouseenter", function(){
 		show_skill(skills_hash[selected_class]["Skills"][$(this).attr("name")]);
 	});
@@ -144,7 +148,9 @@ var build_tree = function() {
 
 // Show the selected skill in the top portion of the page
 var show_skill = function(selected_skill) {
+	// Set the shown skill
 	shown_skill = selected_skill["Name"];
+	// Get the selected skill's levels assigned to it
 	var selected_skill_level = skill_levels[selected_skill["Name"]];
 	// Set the labels
 	if (selected_skill_level > 0)
@@ -175,17 +181,27 @@ var improve_skill = function(skill) {
 		((skill["Tier"] == 0 && skill_levels[skill["Name"]] != 1) || 
 		(skill["Tier"] != 0 && skill_levels[skill["Name"]] != 5 && check_prerequisites(skill))) &&
 		skill_points_current < skill_points_max) {
-		
+		// Level up the skill and increase skill points used
 		skill_levels[skill["Name"]]++;
 		skill_points_current++;
+		// Refresh the current skill points used
 		$("#skill-points-cur").html(skill_points_current);
+		// Add the level of the skill
 		$(".skill[name='" + skill["Name"] + "'] .level").html("Level " + skill_levels[skill["Name"]]);
-		if (skill_levels[skill["Name"]] < 5 && !$(".skill[name='" + skill["Name"] + "']").hasClass("skill-improved"))
-			$(".skill[name='" + skill["Name"] + "']").addClass("skill-improved");
-		else if (skill_levels[skill["Name"]] == 5 && !$(".skill[name='" + skill["Name"] + "']").hasClass("skill-maxed"))
-		{
-			$(".skill[name='" + skill["Name"] + "']").removeClass("skill-improved");
+		// If this is the initial skill, mark it as mastered
+		if (skill["Tree"] == "Initial")
 			$(".skill[name='" + skill["Name"] + "']").addClass("skill-maxed");
+		else
+		{
+			// Add the skill-improved class to a skill if it doesn't have it already
+			if (skill_levels[skill["Name"]] < 5 && !$(".skill[name='" + skill["Name"] + "']").hasClass("skill-improved"))
+				$(".skill[name='" + skill["Name"] + "']").addClass("skill-improved");
+			// Swap for the skill-maxed class if the skill is maxed
+			else if (skill_levels[skill["Name"]] == 5 && !$(".skill[name='" + skill["Name"] + "']").hasClass("skill-maxed"))
+			{
+				$(".skill[name='" + skill["Name"] + "']").removeClass("skill-improved");
+				$(".skill[name='" + skill["Name"] + "']").addClass("skill-maxed");
+			}
 		}
 		clear_skill();
 		show_skill(skill);
@@ -211,12 +227,6 @@ var check_prerequisites = function(skill) {
 		// Otherwise, check all the previous tier's skills and make sure their total levels is at least 5
 		else
 		{
-			/*var prev_tier_val = 0;
-			$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][parseInt(skill["Tier"])-1], function(){
-				prev_tier_val += skill_levels[this["Name"]];
-			});
-			return prev_tier_val >= 5;*/
-			
 			var prev_tiers_val = calculate_prev_skill_levels_recursive(skill, parseInt(skill["Tier"]-1), 0);
 			return prev_tiers_val >= (5 * parseInt(skill["Tier"])) - 5;
 		}
@@ -242,9 +252,12 @@ var reduce_skill = function(skill) {
 	// Verify that the skill can be removed - basically, you need 5 points in a specific tier to unlock the next one.
 	// Do not allow a skill to be leveled down if it has skills further down the tree depending on it
 	if (skill_levels[skill["Name"]] != 0 && check_dependencies(skill)) {
+		// De-level the skill and update the skill points used
 		skill_levels[skill["Name"]]--;
 		skill_points_current--;
+		// Refresh the skill points used at the bottom of the screen
 		$("#skill-points-cur").html(skill_points_current);
+		// If the skill still has points, swap the skill-maxed class for skill-improved class as necessary
 		if (skill_levels[skill["Name"]] > 0)
 		{
 			$(".skill[name='" + skill["Name"] + "'] .level").html("Level " + skill_levels[skill["Name"]]);
@@ -254,9 +267,11 @@ var reduce_skill = function(skill) {
 				$(".skill[name='" + skill["Name"] + "']").addClass("skill-improved");
 			}
 		}
-		else if (skill_levels[skill["Name"]] == 0)
+		// If the skill has been de-leveled to 0, remove all extra labels and classes
+		else
 		{
 			$(".skill[name='" + skill["Name"] + "']").removeClass("skill-improved");
+			$(".skill[name='" + skill["Name"] + "']").removeClass("skill-maxed");
 			$(".skill[name='" + skill["Name"] + "'] .level").html("");
 		}
 		clear_skill();
@@ -294,16 +309,20 @@ var check_dependencies = function(skill) {
 
 // Returns the highest tier in this particular skill tree that has points assigned to it
 var get_max_leveled_tier_recursive = function(skill, tier, leveled_tier) {
+	// If we have finally reached the max tier, return our results.
 	if (skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][tier] === undefined)
 		return leveled_tier;
 	else
 	{
+		// Get the levels of all skills at this tier.
 		var current_tier_val = 0;
 		$.each(skills_hash[selected_class]["Tree"][skill["Tree"]]["Tier"][tier], function(){
 			current_tier_val += skill_levels[this["Name"]];
 		});
+		// Set the leveled tier to this one if skill points have been assigned.
 		if (current_tier_val > 0)
 			leveled_tier = tier;
+		// Keep going up tiers until we reach the maximum.
 		return get_max_leveled_tier_recursive(skill, tier+1, leveled_tier);
 	}
 }
