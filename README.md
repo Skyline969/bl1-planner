@@ -7,3 +7,6 @@ A simplified skill tree planner for Borderlands. Simply download and run index.h
 # Planned Features
 * Sharing/saving builds
 * Graphics and other UI improvements
+
+# Known Issues
+* Running the webpage locally in Chrome fails due to CORS policy. Solution: Host the tool on a webserver or open it in another browser such as Firefox.
